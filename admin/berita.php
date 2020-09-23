@@ -7,7 +7,7 @@
  ?>
 
 <h1 id="list_berita" class="h2">List Berita</h1>
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Tambah Berita</button>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalTambahBerita">Tambah Berita</button>
 <br>
 <!-- <hr>
 <a href="tambah_berita.php"><button type="button" class="btn btn-primary">Tambah Berita</button></a><br>
@@ -43,7 +43,7 @@
       <td><?=date("h:i A",strtotime($data['tgl_input']));?></td>
      <!--  echo date("d F Y",strtotime($row['tgl_input'])); -->
       <td>
-      <a href="index.php?id=<?=$data['id_berita'];?>#edit_berita"><button type="button" class="btn btn-warning">Edit</button></a>
+      <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModalEditBerita">Edit</button>
       <a href="proses_del_berita.php?id=<?=$data['id_berita'];?>"><button type="button" class="btn btn-danger">Delete</button></a>
     </td>
     <?php } ?>

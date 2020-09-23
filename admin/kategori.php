@@ -6,7 +6,7 @@
  ?>
 
 <h1 id="list_kategori" class="h2">List Kategori</h1>
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Tambah Kategori</button>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalTambahKategori">Tambah Kategori</button>
 <br>
 <!-- <hr>
 <a href="tambah_berita.php"><button type="button" class="btn btn-primary">Tambah Berita</button></a><br>
@@ -30,7 +30,7 @@
       <th scope="row"><?=$data['id_kategori'];?></th>
       <td><?=$data['nama_kategori'];?></td>
       <td>
-      <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal2">Edit</button>
+      <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModalEditKategori">Edit</button>
       <a href="proses_del_kategori.php?id=<?=$data['id_kategori'];?>"><button type="button" class="btn btn-danger">Delete</button></a>
     </td>
     <?php } ?>

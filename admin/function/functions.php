@@ -34,7 +34,7 @@ echo date("d F Y");
 <?php } ?>
 
 <?php function tambah_kategori(){ ?>
-<div class="modal fade" id="myModal">
+<div class="modal fade" id="myModalTambahKategori">
 	<div class="modal-dialog">
 		<div class="modal-content">
 
@@ -65,7 +65,7 @@ echo date("d F Y");
 
 <?php function edit_kategori(){ ?>
 <!-- Modal nya-->
-<div class="modal fade" id="myModal2">
+<div class="modal fade" id="myModalEditKategori">
 	<div class="modal-dialog">
 		<div class="modal-content">
 
@@ -99,7 +99,7 @@ echo date("d F Y");
 
 <?php function tambah_berita(){ ?>
 <!-- Modal nya-->
-<div class="modal fade" id="myModal3">
+<div class="modal fade" id="myModalTambahBerita">
 	<div class="modal-dialog">
 		<div class="modal-content">
 
@@ -141,7 +141,7 @@ echo date("d F Y");
 
 <?php function edit_berita(){ ?>
 <!-- Modal nya-->
-<div class="modal fade" id="myModal4">
+<div class="modal fade" id="myModalEditBerita">
 	<div class="modal-dialog">
 		<div class="modal-content">
 
