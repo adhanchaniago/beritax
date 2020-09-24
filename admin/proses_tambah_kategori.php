@@ -13,14 +13,15 @@ $kategori_check = mysqli_num_rows(mysqli_query($conn,"SELECT * FROM kategori WHE
 
 
 if ($kategori_check > 0) {
-	header('location: kategori.php?Kategori-Exists#create_kategori');
+	header('location: kategori.php?pesan_gagal=Kategori-sudah-ada');
 
 } else {
 	//proses inser atau register
 	$sql = "INSERT INTO kategori SET nama_kategori = '$kategori'";
 	mysqli_query($conn, $sql);
 
-	header('location: kategori.php?pesan=tambah-kategori-success#create_kategori');
+	$msg="Kategori berhasil ditambah";
+	header('location: kategori.php?pesan_sukses=tambah-kategori-success');
 }
 }
 

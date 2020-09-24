@@ -6,6 +6,8 @@
 <?php edit_user();
  ?>
 
+<?php pesan(); ?>
+
       <h2 id="mng_user">User Management</h2>
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalTambahUser">Tambah User</button>
       <div class="table-responsive">
@@ -50,7 +52,7 @@
               </select></td>
               <td>
       <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModalEditUser">Edit</button>
-      <a href="proses_del_user.php?id=<?=$data['id'];?>"><button type="button" class="btn btn-danger">Delete</button></a>
+      <a href="proses_del_user.php?id=<?=$data['id'];?>" onclick="return confirm('Apakah anda yakin akan menghapus?')"><button type="button" class="btn btn-danger">Delete</button></a>
     </td>
             </tr>
           <?php } ?>

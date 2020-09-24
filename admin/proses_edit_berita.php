@@ -20,18 +20,17 @@ if(!empty($gambar)){
 	$query = mysqli_query($conn,"UPDATE berita SET gambar = '$gambar' WHERE id_berita = '$id'");
 }
 
-if (strlen($judul) < 10) {
+if (strlen($judul) < 5) {
 	// jika ada username yang sama
-	header('location: index.php?judul-harus-diisi');
-} else if (strlen($isi) < 31) {
-	// jika ada username yang sama
-	header('location: index.php?isi-minimal-50-karakter');
-} else if ($check_id > 0) {
+	header('location: berita.php?pesan_gagal=judul-minimal-5-karakter');
+}  else if ($check_id > 0) {
 	//proses inser atau register
 	$sql = "UPDATE `berita` SET `judul_berita` = '$judul', `kategori` = '$kategori', `isi_berita` = '$isi', `gambar` = '$gambar', `tgl_update` = 'now()' WHERE `berita`.`id_berita` = '$id'";
 	mysqli_query($conn, $sql);
 
-	header('location: berita.php?pesan=tambah-berita-success');
+	header('location: berita.php?pesan_sukses=edit-berita-success');
+}	else{
+	header('location:berita.php?pesan_gagal=edit berita gagal');
 }
 }
 

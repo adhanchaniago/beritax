@@ -33,7 +33,7 @@
       </div>
       <div class="col-4 d-flex justify-content-end align-items-center navbar navbar-light">
         <a href="admin/login.php" class="badge"><button class="btn btn-sm btn-outline-secondary ml-1" id="login_show" href="admin/login.php">Login</button></a>
-        <button class="btn btn-sm btn-outline-secondary ml-2" id="register_show">Sign up</button> 
+        <button class="btn btn-sm btn-outline-secondary ml-2" id="register_show" data-toggle="modal" data-target="#myModalTambahBerita">Sign up</button> 
       </div>
     </div>
   </header>

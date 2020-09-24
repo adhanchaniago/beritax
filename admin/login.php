@@ -26,7 +26,7 @@ if (isset($_SESSION['id'])) {
 	<title>Halaman Login</title>
 </head>
 <body>
-
+<a href="../index.php" class="btn btn-info">Kembali ke Portal</a>
 	<form class="form-signin" action="proses_login.php" method="POST">
   <div class="text-center mb-4">
     <img class="mb-4" src="https://getbootstrap.com/docs/4.5/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
@@ -49,6 +49,13 @@ if (isset($_SESSION['id'])) {
       <input type="checkbox" name="remember-me" value="remember-me"> Remember me
     </label>
   </div>
+  <i class="text-danger">
+    <?php if (isset($_GET['pesan'])): 
+    echo $_GET['pesan'];
+    ?>
+    </i>
+      
+  <?php endif ?>
   <input class="btn btn-lg btn-primary btn-block" type="submit" name="submit" value="Masuk"></input>
   <p class="mt-5 mb-3 text-muted text-center">&copy; 2020- Beritax Company</p>
 </form>
