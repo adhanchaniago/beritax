@@ -21,7 +21,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 	if ($check > 0 && $data['status'] == 1) {
 		$_SESSION['username']=$data['username'];
 		$getData = mysqli_fetch_array($queryDB);
-		$_SESSION['pesan'] = 'Selamat! Anda telah berhasil login';
 		$_SESSION['name'] = $getData;
 		$_SESSION['is_login'] = true;
 		// cek remember-me
@@ -32,7 +31,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 		}
 
 		//pindahke index.php
-		header("location: index.php");
+		header("location: index.php?pesan=Selamat! Anda telah berhasil login ");
+
 		//catat history login ke tabel user log
 		$sql = "INSERT INTO user_log(username,ip,agent,waktu) VALUES('$username','$ip','$agent',now())";
 		$result = mysqli_query($conn,$sql) or die(mysqli_error($conn));
@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 		$sql = "UPDATE users set lastactivity =now(),login_ip = '$ip' where username= '$username'";
 		$rs = mysqli_query($conn,$sql);
 	} else {
-		echo "Email atau password yang anda input salah atau akun anda telah dinonaktifkan";
+		header("location: login.php?pesan=Email atau password yang anda input salah atau akun anda telah dinonaktifkan");
 	}
 }
 	else {

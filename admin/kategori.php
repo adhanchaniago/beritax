@@ -2,15 +2,15 @@
 <?php require ('includes/leftsidebar.php'); ?>
 <?php tambah_kategori();
  ?>
- <?php edit_kategori();
+<?php edit_kategori();
  ?>
+
+<?php pesan(); ?>
 
 <h1 id="list_kategori" class="h2">List Kategori</h1>
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalTambahKategori">Tambah Kategori</button>
 <br>
-<!-- <hr>
-<a href="tambah_berita.php"><button type="button" class="btn btn-primary">Tambah Berita</button></a><br>
-<br> -->
+
 <table class="table">
   <thead>
     <tr>
@@ -31,7 +31,7 @@
       <td><?=$data['nama_kategori'];?></td>
       <td>
       <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModalEditKategori">Edit</button>
-      <a href="proses_del_kategori.php?id=<?=$data['id_kategori'];?>"><button type="button" class="btn btn-danger">Delete</button></a>
+      <a href="proses_del_kategori.php?id=<?=$data['id_kategori'];?>" onclick="return confirm('Apakah anda yakin akan menghapus?')"><button type="button" class="btn btn-danger">Delete</button></a>
     </td>
     <?php } ?>
     </tr>

@@ -4,13 +4,17 @@ require ('includes/topheader.php');
 require ('includes/leftsidebar.php');
 
  ?>
-  <div class="alert alert-success" role="alert">
-  <?=$_SESSION['pesan'];?> <i class="text-bold h6"><?=$result['name']?></i>
-  
+
+<?php if (isset($_GET['pesan'])) { ?>
+<div class="alert alert-success" role="alert">
+  <strong>Yap!</strong><?php  echo $_GET['pesan'].' '.$result['name']; ?>
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
   <span aria-hidden="true">&times;</span>
 </button>
-  </div>
+</div>
+<?php } ?>
+
+  
   <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
   <h1 class="h2">Dashboard</h1>
   <?php require ('includes/config.php');

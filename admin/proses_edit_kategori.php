@@ -16,7 +16,9 @@ if ($check_id > 0) {
 	$sql = "UPDATE `kategori` SET `nama_kategori` = '$kategori' WHERE `kategori`.`id_kategori` = '$id'";
 	mysqli_query($conn, $sql);
 
-	header('location: kategori.php?pesan=edit-kategori-success');
+	header('location: kategori.php?pesan_sukses=edit-kategori-success');
+}else{
+	header('location:kategori.php?pesan_gagal=Berita gagal dihapus');
 }
 }
 
